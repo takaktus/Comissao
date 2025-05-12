@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Fluxograma incompleto"/>
+        <attribute name="authors" value="felipe.mtakaki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-05-12 03:09:39 "/>
+        <attribute name="created" value="ZmVsaXBlLm10YWtha2k7U0FOMDcxNzQ2N1cxMS0xOzIwMjUtMDUtMTI7IjAyOjQwOjE2ICI7MzQ3MQ=="/>
+        <attribute name="edited" value="ZmVsaXBlLm10YWtha2k7U0FOMDcxNzQ2N1cxMS0xOzIwMjUtMDUtMTI7IjAzOjA5OjM5ICI7MTszNTkw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="salario, valorVendas, comissao, pagamentoTotal" type="Real" array="False" size=""/>
+            <declare name="nomeVendedor" type="String" array="False" size=""/>
+            <output expression="&quot;Digite o nome do vendedor&quot;" newline="True"/>
+            <input variable="nomeVendedor"/>
+            <output expression="&quot;Digite o valor do sal&#225;rio fixo&quot;" newline="True"/>
+            <input variable="salario"/>
+            <output expression="&quot;Digite o valor total das vendas&quot;" newline="True"/>
+            <input variable="valorVendas"/>
+            <if expression="valorVendas&gt;3000">
+                <then>
+                    <assign variable="comissao" expression="valorVendas * 0.15"/>
+                </then>
+                <else>
+                    <if expression="valorVendas &gt;= 1500 &amp;&amp; valorVendas &lt;= 2999.99">
+                        <then>
+                            <assign variable="comissao" expression="valorVendas * 0.10"/>
+                        </then>
+                        <else>
+                            <assign variable="comissao" expression="valorVendas * 0.05"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="pagamentoTotal" expression="salario + comissao"/>
+            <output expression="&quot;Vendedor:&quot; &amp; nomeVendedor&#13;&#10;&amp;&#13;&#10;&quot;Valor das vendas:&quot; &amp; valorVendas &amp;&#13;&#10;&quot;Valor da comiss&#227;o:&quot; &amp; comissao &amp;&#13;&#10;&quot;Valor do sal&#225;rio:&quot; &amp; salario &#13;&#10;&amp;&#13;&#10;&quot;Pagamento: R$&quot; &amp; pagamentoTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

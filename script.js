@@ -2,9 +2,9 @@ function calcularPagamento() {
     let nomeVendedor = prompt("Digite o nome do vendedor:");
     let salario = Number(prompt("Digite o valor do salário fixo:"));
     let valorVendas = Number(prompt("Digite o valor total das vendas:"));
+    let comissao;
     
     // 1. Comissão 
-    let comissao;
     
     if (valorVendas > 3000) {
         comissao = valorVendas * 0.15;
